@@ -19,8 +19,8 @@ except (AttributeError, JSONDecodeError):
     token = util.prompt_for_user_token(username, scope) # add scope
 
 # Create our spotify object with permissions
-user = Client.Client(spotipy.Spotify(auth=token))
-spotifyObject = user.getSpotify()
+clienteSpotify = Client.Client(spotipy.Spotify(auth=token))
+spotifyObject = clienteSpotify.getSpotify()
 # Get current device
 devices = spotifyObject.devices()
 selDevice = 0
@@ -34,7 +34,7 @@ if devices['devices'] != []:
     else:
         deviceID = devices['devices'][selDevice]['id']
 
-    user.setDevice(deviceID)
+    clienteSpotify.setDevice(deviceID)
     print("\nConnected to: ", devices['devices'][selDevice]['name'])
     # Current track information
     track = spotifyObject.current_user_playing_track()
@@ -48,6 +48,7 @@ if devices['devices'] != []:
     user = spotifyObject.current_user()
     displayName = user['display_name']
 
-    user.setPlayList()
-    user.selectPlayList()
-    user.playMixed()
+    clienteSpotify.setPlayList()
+    clienteSpotify.selectPlayList()
+    clienteSpotify.playMixed()
+    #ed.savedTracks()
