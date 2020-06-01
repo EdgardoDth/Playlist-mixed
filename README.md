@@ -16,15 +16,15 @@ Firts of all:
 
 5. In the folder where clone the project and import the next:
     - Client ID and paste it in terminal    
-export SPOTIPY_CLIENT_ID=''
+		* export SPOTIPY_CLIENT_ID=''
     - Client secret and paste it in terminal
-export SPOTIPY_CLIENT_SECRET=''
-    - Copy you Redirect URIs and paste it in terminal
-export SPOTIPY_REDIRECT_URI='https://www.google.mx/'
+		* export SPOTIPY_CLIENT_SECRET=''
+    - Copy your Redirect URIs and paste it in terminal
+		* export SPOTIPY_REDIRECT_URI='https://www.google.mx/'
 
-7. Run the main file adding your usernarme from you spotify account
+6. Run the main file adding your usernarme from your spotify account
     - python main.py "username"
-8. A browser will be open with the URL that you put in Redirect URIs. Spotify gives you a code, that code has to be copy and paste in the terminal
+7. A browser will open with the URL that you put in Redirect URIs. Spotify gives you a code, that code has to be copy and paste in the terminal
 
 
 Using the program:
