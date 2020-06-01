@@ -4,7 +4,6 @@ import json
 import spotipy
 import spotipy.util as util
 from json.decoder import JSONDecodeError
-
 import Client
 
 # Get the username from terminal
@@ -25,6 +24,7 @@ spotifyObject = clienteSpotify.getSpotify()
 devices = spotifyObject.devices()
 selDevice = 0
 deviceID = None
+
 if devices['devices'] != []:
     if len(devices['devices']) > 1:
         print("Choose a device: ")
@@ -51,4 +51,3 @@ if devices['devices'] != []:
     clienteSpotify.setPlayList()
     clienteSpotify.selectPlayList()
     clienteSpotify.playMixed()
-    #ed.savedTracks()
