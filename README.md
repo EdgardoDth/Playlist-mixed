@@ -14,7 +14,7 @@ Firts of all:
     - Choose a Redirect URIs
         * You can choose somethin like: 'https://www.google.mx/', this is needed for give you a token in the Url browser
 
-5. In the folder where clone the project and import the next:
+5. In the folder where you cloned the project, export the following:
     - Client ID and paste it in terminal    
 		* export SPOTIPY_CLIENT_ID=''
     - Client secret and paste it in terminal
