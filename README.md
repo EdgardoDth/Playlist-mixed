@@ -21,7 +21,7 @@ Firts of all:
     - Client secret and paste it in terminal
 		* ```export SPOTIPY_CLIENT_SECRET=' '```
     - Copy your Redirect URIs and paste it in terminal
-		* ```export SPOTIPY_REDIRECT_URI='https://www.google.mx'```
+		* ```export SPOTIPY_REDIRECT_URI='https://www.google.mx/'```
 
 6. Run the main file adding your usernarme from your spotify account
     - ```python main.py "username"```
