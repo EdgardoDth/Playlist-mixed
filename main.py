@@ -30,7 +30,12 @@ if devices['devices'] != []:
         print("Choose a device: ")
         for i in range(len(devices['devices'])):
             print(i, ". " + devices['devices'][i]['name'] + " - " + devices['devices'][i]['type'])
-        selDevice = (int)(input("Number of device: "))
+        while True:
+            try:
+                selDevice = (int)(input("Number of device: "))
+                break
+            except ValueError:
+                print("Invalid selection...")
     else:
         deviceID = devices['devices'][selDevice]['id']
 
@@ -50,4 +55,4 @@ if devices['devices'] != []:
 
     clienteSpotify.setPlayList()
     clienteSpotify.selectPlayList()
-    clienteSpotify.playMixed()
+    clienteSpotify.plMixed()
