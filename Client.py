@@ -17,7 +17,6 @@ class Client(object):
 
 	def setPlayList(self):
 		playList = self.spotify.current_user_playlists(limit=50)
-
 		total = 0
 		if playList['total'] < playList['limit']:
 			total = playList['total']
@@ -136,7 +135,6 @@ class Client(object):
 			sp[auxName] = list(set(sp[auxName]).difference(sp[auxNameNext]))
 
 		return sp
-
 
 	def savedTracks(self):
 		save = self.spotify.current_user_saved_tracks(limit=50)
