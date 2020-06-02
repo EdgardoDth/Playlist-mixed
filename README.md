@@ -3,6 +3,7 @@ This script shows all playlist from a user of spotify and let you mixed many of 
 Firts of all:
 
 1. Create or log in with you spotify account in spotify developer.
+    - https://developer.spotify.com/dashboard/login
 2. Click in "Create a Client id"
 3. Select a:
     - Name for this
