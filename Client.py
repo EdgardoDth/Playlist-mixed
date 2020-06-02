@@ -91,7 +91,8 @@ class Client(object):
 		tracks = self.spotify.playlist_tracks(id, fields='items.track.id', limit=100, additional_types=('track',))
 		total = self.spotify.playlist_tracks(id, fields='total', limit=1, additional_types=('track',))
 
-		#
+		#Due that the limit is 100 songs, you obtain in this
+		#"while" the next songs of the playlist until it completes the total amount
 		while len(tracks['items']) < total['total']:
 			offs =  len(tracks['items'])
 			aux = {}
