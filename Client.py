@@ -91,6 +91,7 @@ class Client(object):
 		tracks = self.spotify.playlist_tracks(id, fields='items.track.id', limit=100, additional_types=('track',))
 		total = self.spotify.playlist_tracks(id, fields='total', limit=1, additional_types=('track',))
 
+		#
 		while len(tracks['items']) < total['total']:
 			offs =  len(tracks['items'])
 			aux = {}
@@ -115,9 +116,6 @@ class Client(object):
 	def findDifference(self, sp):
 		auxName = ''
 		auxNameNext = ''
-		if len(self.selectionPlayList) == 2:
-			sp[self.selectionPlayList[0][1]] = list(set(sp[self.selectionPlayList[0][1]]).difference(sp[self.selectionPlayList[1][1]]))
-			return sp
 
 		for i in range(len(self.selectionPlayList)-1):
 			auxName = self.selectionPlayList[i][1]
