@@ -3,6 +3,7 @@ This script shows all playlist from a user of spotify and let you mixed many of 
 Firts of all:
 
 1. Create or log in with you spotify account in spotify developer.
+    - https://developer.spotify.com/dashboard/login
 2. Click in "Create a Client id"
 3. Select a:
     - Name for this
@@ -14,17 +15,17 @@ Firts of all:
     - Choose a Redirect URIs
         * You can choose somethin like: 'https://www.google.mx/', this is needed for give you a token in the Url browser
 
-5. In the folder where clone the project and import the next:
+5. In the folder where you cloned the project, export the following:
     - Client ID and paste it in terminal    
-export SPOTIPY_CLIENT_ID=''
+		* ```export SPOTIPY_CLIENT_ID=' '```
     - Client secret and paste it in terminal
-export SPOTIPY_CLIENT_SECRET=''
-    - Copy you Redirect URIs and paste it in terminal
-export SPOTIPY_REDIRECT_URI='https://www.google.mx/'
+		* ```export SPOTIPY_CLIENT_SECRET=' '```
+    - Copy your Redirect URIs and paste it in terminal
+		* ```export SPOTIPY_REDIRECT_URI='https://www.google.mx/'```
 
-7. Run the main file adding your usernarme from you spotify account
-    - python main.py "username"
-8. A browser will be open with the URL that you put in Redirect URIs. Spotify gives you a code, that code has to be copy and paste in the terminal
+6. Run the main file adding your usernarme from your spotify account
+    - ```python main.py "username"```
+7. A browser will open with the URL that you put in Redirect URIs. Spotify gives you a code, that code has to be copy and paste in the terminal
 
 
 Using the program:
