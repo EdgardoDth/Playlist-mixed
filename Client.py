@@ -139,12 +139,13 @@ class Client(object):
 	def savedTracks(self):
 		save = self.spotify.current_user_saved_tracks(limit=50)
 		total = save['total']
-		limit = len(save['items'])
+		limit = 50
+		if len(save['items']) < 50:
+			limit = len(save['items'])
+
 		while len(self.savedSongs) < total:
 			for i in range(limit):
 				self.savedSongs.append(save['items'][i]['track']['id'])
 			save = self.spotify.current_user_saved_tracks(limit=50, offset=len(self.savedSongs))
-			print(limit)
-
-		for i in range(len(self.savedSongs)):
-			print(self.savedSongs[i])
+			if len(save['items']) < 50:
+				limit = len(save['items'])
