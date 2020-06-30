@@ -25,6 +25,7 @@ class Client(object):
 
 		for i in range(total):
 			self.playList[i] = (playList['items'][i]['name'], playList['items'][i]['id'], playList['items'][i]['tracks']['total'])
+		self.playList[total] = ('Liked songs', 'Liked songs', 'Liked songs')
 
 	def printPlayList(self):
 		print("\tList of playlists...")
@@ -59,10 +60,10 @@ class Client(object):
 			print("--> " + self.selectionPlayList[i][0])
 
 	def findPlayList(self, selection):
-		name = self.playList[selection][1]
+		id = self.playList[selection][1]
 		slpLen = len(self.selectionPlayList)
 		for i in range(slpLen):
-			if name == self.selectionPlayList[i][1]:
+			if id == self.selectionPlayList[i][1]:
 				return True
 		return False
 
@@ -74,7 +75,10 @@ class Client(object):
 		sp = {}
 		for i in range(totalPlaylist):
 			id = self.selectionPlayList[i][1]
-			sp[id] = self.getTracks(id)
+			if id == 'Liked songs':
+				sp[id] = self.savedSongs
+			else:
+				sp[id] = self.getTracks(id)
 		#remove duplicate songs
 		if totalPlaylist > 1:
 			sp = self.findDifference(sp)
@@ -149,3 +153,4 @@ class Client(object):
 			save = self.spotify.current_user_saved_tracks(limit=50, offset=len(self.savedSongs))
 			if len(save['items']) < 50:
 				limit = len(save['items'])
+		#print(self.savedSongs)
