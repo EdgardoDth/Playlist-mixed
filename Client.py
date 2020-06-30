@@ -78,7 +78,6 @@ class Client(object):
 			if id == 'Liked songs':
 				sp[id] = self.savedSongs
 			else:
-				sp[id] = self.getTracks(id)
 		#remove duplicate songs
 		if totalPlaylist > 1:
 			sp = self.findDifference(sp)
@@ -153,4 +152,3 @@ class Client(object):
 			save = self.spotify.current_user_saved_tracks(limit=50, offset=len(self.savedSongs))
 			if len(save['items']) < 50:
 				limit = len(save['items'])
-		#print(self.savedSongs)
