@@ -77,10 +77,9 @@ class Client(object):
 			id = self.selectionPlayList[i][1]
 			if id == 'Liked songs':
 				sp[id] = self.savedSongs
-			else:
-		#remove duplicate songs
-		if totalPlaylist > 1:
-			sp = self.findDifference(sp)
+			elif totalPlaylist > 1:
+				sp = self.findDifference(sp)
+				#remove duplicate songs
 
 		for key in sp:
 			totalSongs += len(sp[key])
