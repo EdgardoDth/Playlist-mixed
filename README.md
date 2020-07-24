@@ -9,7 +9,7 @@ Firts of all:
     - Name for this
     - A description
     - Desktop app
-    - Non-commercial(if yoy want)
+    - Non-commercial(if you want)
     - Accept the terms
 4. In your application copy:
     - Choose a Redirect URIs

@@ -71,15 +71,24 @@ class Client(object):
 		songSelectedPos = None
 		totalPlaylist = len(self.selectionPlayList)
 		totalSongs = 0
+
 		#sp is a dictionary with playList and tracks
 		sp = {}
 		for i in range(totalPlaylist):
 			id = self.selectionPlayList[i][1]
 			if id == 'Liked songs':
 				sp[id] = self.savedSongs
+<<<<<<< HEAD
 			elif totalPlaylist > 1:
 				sp = self.findDifference(sp)
 				#remove duplicate songs
+=======
+			else:
+				sp[id] = self.getTracks(id)
+		#remove duplicate songs
+		if totalPlaylist > 1:
+			sp = self.findDifference(sp)
+>>>>>>> e9d711c18ef883e089c85cc3326e8bfe2c809fe9
 
 		for key in sp:
 			totalSongs += len(sp[key])
@@ -127,6 +136,7 @@ class Client(object):
 		auxNameNext = ''
 		#remove duplicate songs in playlists selected
 		splLen = len(self.selectionPlayList) - 1
+
 		for i in range(splLen):
 			auxName = self.selectionPlayList[i][1]
 			aux = i+1
