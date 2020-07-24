@@ -78,6 +78,7 @@ class Client(object):
 			if id == 'Liked songs':
 				sp[id] = self.savedSongs
 			else:
+				sp[id] = self.getTracks(id)
 		#remove duplicate songs
 		if totalPlaylist > 1:
 			sp = self.findDifference(sp)
@@ -128,6 +129,7 @@ class Client(object):
 		auxNameNext = ''
 		#remove duplicate songs in playlists selected
 		splLen = len(self.selectionPlayList) - 1
+
 		for i in range(splLen):
 			auxName = self.selectionPlayList[i][1]
 			aux = i+1
