@@ -71,6 +71,7 @@ class Client(object):
 		songSelectedPos = None
 		totalPlaylist = len(self.selectionPlayList)
 		totalSongs = 0
+
 		#sp is a dictionary with playList and tracks
 		sp = {}
 		for i in range(totalPlaylist):
